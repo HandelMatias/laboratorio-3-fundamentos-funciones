@@ -1,118 +1,218 @@
+# 🧠 Laboratorio 03 - Fundamentos y Funciones en JavaScript
 
-# Fundamentos-Funciones
-//Var, Let,const
+**Materia:** Desarrollo de Aplicaciones Web  
+**Profesor:** Ing. Byron Loarte  
+**Institución:** Escuela Politécnica Nacional  
+**Período:** 2025-A  
 
-var cantidadPeliculas = 250
-let usuarioACtivo = true
-const numAnolanzamiento = 2000
+---
 
-console.log(cantidadPeliculas + " "+ usuarioACtivo + " " + numAnolanzamiento)
+## 🎯 Propósito de la práctica
+Familiarizar al estudiante con el lenguaje de programación **JavaScript**, reconociendo su sintaxis básica, estructuras de control, manejo de variables, y el uso de **funciones** para la lógica de programación.
 
-//Strings
+---
 
-let nombre = "Una batalla tras otra"
-let emailMovie = "unabatallatrasotra@ibm.com"
-let ano = 2025
-let puntuacion = 8.9
-let vistas = 79.000
-console.log(nombre + "   "+ano+";"+ " "+puntuacion+"stars"+ ";"+" "+vistas+ "K")
-console.log(nombre.toLocaleUpperCase())
-console.log(nombre.toLocaleLowerCase())
-console.log(emailMovie.includes("@"))
-console.log(emailMovie.toLocaleLowerCase().endsWith ("@ibm.com"))
-console.log("Reemplazar una palabra:",nombre.replace('Una','una'));
+## 👥 Integrantes del grupo
+| N° | Nombre |
+|----|---------|
+| 1 | Handel Manobanda |
+| 2 | Jhosselin Naula |
+| 3 | Carlos Quintana|
 
-//Template Literals
-const name = "Una batalla tras otra"
-const country ="USA"
-const language = "EN"
-const earnings = 105
-const active = true
-console.log(name +"-"+country+"-"+language)
-console.log(`${name} - ${country} - ${language} - ${active ? earnings + "M" : 'No se encuentra activo'}`);
+---
 
-//Numbers
+## 📂 Archivos del proyecto
 
-const numGananciaUSA = 43
+| Archivo | Descripción |
+|----------|--------------|
+| `01-fundaments.js` | Contiene ejemplos sobre los fundamentos de JavaScript: variables, strings, template literals, números, objeto Math, condiciones, conversiones, etc. |
+| `02-functions.js` | Desarrolla la segunda parte del laboratorio: funciones declaradas, expresadas, flecha, con parámetros por defecto, funciones dentro de funciones, closures e IIFE. |
+| `README.md` | Documento descriptivo del laboratorio y su desarrollo. |
 
-const numGananciaGlobal = 105
-const numpresupuesto = 130
+---
 
-console.log(numGananciaUSA,numGananciaGlobal);
+## ⚙️ Ejecución del proyecto
 
-console.log("suma:",numGananciaGlobal+numGananciaUSA);
-console.log("resta:",numGananciaGlobal + numGananciaUSA- numpresupuesto);
+1. Clona o descarga el repositorio.
+2. Abre una terminal en el directorio del proyecto.
+3. Ejecuta los siguientes comandos:
 
-let totalGanancias = numGananciaUSA + numGananciaGlobal;
+```bash
+node 01-fundaments.js
+node 02-functions.js
+```
 
-if (totalGanancias > numpresupuesto) {
-console.log(" La película fue rentable");
-} else {
-console.log(" La película tuvo pérdidas");
+4. Observa los resultados en la consola de Node.js.
+
+---
+
+## 🧩 Temas aplicados
+
+### 🔹 Fundamentos (`01-fundaments.js`)
+- Declaración de variables (`var`, `let`, `const`)
+- Manipulación de cadenas (`toUpperCase()`, `replace()`, `includes()`)
+- Uso de **template literals**
+- Operaciones matemáticas y **objeto `Math`**
+- **Conversión de tipos numéricos**
+- **Condiciones:** simples, dobles, múltiples y operador ternario
+
+### 🔹 Funciones (`02-functions.js`)
+- Funciones **declaradas**, **expresadas** y **flecha**
+- Parámetros por defecto
+- Funciones que retornan valores
+- Funciones con condicionales
+- Funciones anidadas y **closures**
+- Función **IIFE** (Immediately Invoked Function Expression)
+- Uso de **template literals** dentro de funciones
+- Manejo de arreglos con funciones (`forEach`)
+
+---
+
+## 🧮 Ejemplo práctico
+
+```js
+function calcularGanancia(total, presupuesto) {
+  return total > presupuesto ? "Rentable ✅" : "Pérdida ❌";
 }
 
-//MATH
+console.log(calcularGanancia(150, 100)); // Rentable ✅
+```
 
-// Mostrar el objeto Math
-console.log("El objeto Math contiene muchas funciones matemáticas:", Math);
-console.log("Constante PI:", Math.PI);
-let gananciaDecimal = 43.76;
-console.log("Ganancia redondeada (USA):", Math.round(gananciaDecimal));
-console.log("Raíz cuadrada de la ganancia global:", Math.sqrt(numGananciaGlobal));
-let gananciaNegativa = -15;
-console.log("Valor absoluto de una pérdida:", Math.abs(gananciaNegativa));
-console.log("Ganancia USA al cuadrado:", Math.pow(numGananciaUSA, 2));
-console.log("Menor ganancia entre USA y Global:", Math.min(numGananciaUSA, numGananciaGlobal));
-console.log("Mayor valor entre Global y Presupuesto:", Math.max(numGananciaGlobal, numpresupuesto));
-console.log("Ganancia aleatoria (0 a 20 millones):", Math.round(Math.random() * 20));
-//ORDEN DE PRECEDENCIA 
+```js
+const saludar = (nombre) => `🎬 Bienvenido al cine, ${nombre}!`;
+console.log(saludar("Matías"));
+```
 
-/*
-Aplicando el proceso con los valor de ganancia de la pelicula
+---
 
-*/
-console.log("numGananciaUSA + numGananciaGlobal * 0.1 =", numGananciaUSA + numGananciaGlobal * 0.1);
-console.log("0.5 * numGananciaUSA ** 2 =", 0.5 * numGananciaUSA ** 2);
-console.log("numGananciaUSA + numGananciaGlobal =", numGananciaUSA + numGananciaGlobal);
-console.log("(numGananciaUSA + numGananciaGlobal) * 0.1 =", (numGananciaUSA + numGananciaGlobal) * 0.1);
-console.log("numPresupuesto - numGananciaGlobal * 0.5 =", numpresupuesto - numGananciaGlobal * 0.5);
-console.log("(numPresupuesto - numGananciaGlobal) * 0.5 =", (numpresupuesto - numGananciaGlobal) * 0.5);
-console.log("numGananciaGlobal + numGananciaUSA ** 2 * 0.01 =", numGananciaGlobal + numGananciaUSA ** 2 * 0.01);
+## 📚 Recursos utilizados
 
+- **Notion - Fundamentos de JavaScript:**  
+  https://byronloarte.notion.site/Fundamentals-14cba0b9b2de4af99d167ce604dc12a3?pvs=4
 
-//Conversion de Numeros
+- **Notion - Funciones:**  
+  https://byronloarte.notion.site/Functions-bc38108ef2e8426c9af498b2830b4052?pvs=4
 
-console.log(Number.parseInt(numGananciaUSA));
-console.log(Number.parseFloat(numGananciaGlobal));
-console.log(Number.isInteger(Number(numGananciaUSA)));
-console.log("Ganancia en enteros", +numGananciaUSA + +numGananciaGlobal);
-console.log("Ganancia vs presupuesto:", (+numGananciaUSA + +numGananciaGlobal) - +numpresupuesto);
+- **Blog para resumen a mano:**  
+  [ES6 features that every front-end developer should know](https://praason.medium.com/es6-features-that-every-front-end-developer-should-know-64a90da1f672)
 
+---
 
-//CONDICION SIMPLE 
-const peliculas = [];
+## 🏁 Conclusión
 
+El laboratorio permitió reforzar los **conceptos básicos de JavaScript**, comprendiendo la estructura y comportamiento del lenguaje, así como el uso de funciones para modularizar el código.  
+Además, se practicó el uso de GitHub para alojar el proyecto en una rama llamada **`fundamentos-funciones`** con la respectiva documentación.
 
-if (peliculas.length === 0) {
-    console.log("Agregar películas al listado");
+---
+
+## 🔗 Enlace al repositorio del grupo
+> # 🧠 Laboratorio 03 - Fundamentos y Funciones en JavaScript
+
+**Materia:** Desarrollo de Aplicaciones Web  
+**Profesor:** Ing. Byron Loarte  
+**Institución:** Escuela Politécnica Nacional  
+**Período:** 2025-A  
+
+---
+
+## 🎯 Propósito de la práctica
+Familiarizar al estudiante con el lenguaje de programación **JavaScript**, reconociendo su sintaxis básica, estructuras de control, manejo de variables, y el uso de **funciones** para la lógica de programación.
+
+---
+
+## 👥 Integrantes del grupo
+| N° | Nombre |
+|----|---------|
+| 1 | Handel Manobanda |
+| 2 | Jhosselin Naula |
+| 3 | Carlos Quintana|
+
+---
+
+## 📂 Archivos del proyecto
+
+| Archivo | Descripción |
+|----------|--------------|
+| `01-fundaments.js` | Contiene ejemplos sobre los fundamentos de JavaScript: variables, strings, template literals, números, objeto Math, condiciones, conversiones, etc. |
+| `02-functions.js` | Desarrolla la segunda parte del laboratorio: funciones declaradas, expresadas, flecha, con parámetros por defecto, funciones dentro de funciones, closures e IIFE. |
+| `README.md` | Documento descriptivo del laboratorio y su desarrollo. |
+
+---
+
+## ⚙️ Ejecución del proyecto
+
+1. Clona o descarga el repositorio.
+2. Abre una terminal en el directorio del proyecto.
+3. Ejecuta los siguientes comandos:
+
+```bash
+node 01-fundaments.js
+node 02-functions.js
+```
+
+4. Observa los resultados en la consola de Node.js.
+
+---
+
+## 🧩 Temas aplicados
+
+### 🔹 Fundamentos (`01-fundaments.js`)
+- Declaración de variables (`var`, `let`, `const`)
+- Manipulación de cadenas (`toUpperCase()`, `replace()`, `includes()`)
+- Uso de **template literals**
+- Operaciones matemáticas y **objeto `Math`**
+- **Conversión de tipos numéricos**
+- **Condiciones:** simples, dobles, múltiples y operador ternario
+
+### 🔹 Funciones (`02-functions.js`)
+- Funciones **declaradas**, **expresadas** y **flecha**
+- Parámetros por defecto
+- Funciones que retornan valores
+- Funciones con condicionales
+- Funciones anidadas y **closures**
+- Función **IIFE** (Immediately Invoked Function Expression)
+- Uso de **template literals** dentro de funciones
+- Manejo de arreglos con funciones (`forEach`)
+
+---
+
+## 🧮 Ejemplo práctico
+
+```js
+function calcularGanancia(total, presupuesto) {
+  return total > presupuesto ? "Rentable ✅" : "Pérdida ❌";
 }
-// operador ternario
-peliculas.length === 0 ? console.log("Agregar películas al listado") : "";
 
+console.log(calcularGanancia(150, 100)); // Rentable ✅
+```
 
-//CONDICION DOBLE
-const movies= ['Una batalla tras otra', 'La última misión', 'Héroes del tiempo'];
+```js
+const saludar = (nombre) => `🎬 Bienvenido al cine, ${nombre}!`;
+console.log(saludar("Matías"));
+```
 
-if (movies.length !== 0) {
-    console.log("Proceder a procesar las películas");
-} else {
-    console.log("Agregar películas al listado");
-}
-// Operador ternario
-console.log(peliculas.length !== 0 ? "Proceder a procesar las películas" : "Agregar películas al listado");
+---
 
+## 📚 Recursos utilizados
 
-//CONDICION MULTIPLE
-console.log(totalGanancias > numpresupuesto * 1.5 ? "Película alta rentabilidad": totalGanancias > numpresupuesto ? "Película rentable"
-: totalGanancias === numpresupuesto? "Película neutra sin ganancia": "Película, genera perdida "
-);
+- **Notion - Fundamentos de JavaScript:**  
+  https://byronloarte.notion.site/Fundamentals-14cba0b9b2de4af99d167ce604dc12a3?pvs=4
+
+- **Notion - Funciones:**  
+  https://byronloarte.notion.site/Functions-bc38108ef2e8426c9af498b2830b4052?pvs=4
+
+- **Blog para resumen a mano:**  
+  [ES6 features that every front-end developer should know](https://praason.medium.com/es6-features-that-every-front-end-developer-should-know-64a90da1f672)
+
+---
+
+## 🏁 Conclusión
+
+El laboratorio permitió reforzar los **conceptos básicos de JavaScript**, comprendiendo la estructura y comportamiento del lenguaje, así como el uso de funciones para modularizar el código.  
+Además, se practicó el uso de GitHub para alojar el proyecto en una rama llamada **`fundamentos-funciones`** con la respectiva documentación.
+
+---
+
+## 🔗 Enlace al repositorio del grupo
+> https://github.com/HandelMatias/laboratorio-3-fundamentos-funciones.git
+
